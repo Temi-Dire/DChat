@@ -1,6 +1,10 @@
 import Navbar from "../../components/navbar";
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import { useState } from "react";
 
 const signup = () => {
+  const [showPassword, setShowPassword] = useState(!true) 
   return (
     <div className="px-6 h-screen bg-white">
       <Navbar />
@@ -20,23 +24,33 @@ const signup = () => {
           <h2 className="mb-4 text-xl text-[#734F96]">Sign Up Now!</h2>
           <div className="">
             <form className="flex flex-col justify-between mb-3" action="">
-              <input
-                className="block outline-none border-b-2 border-b-[#ece0f7] w-full mb-10 bg-inherit"
-                type="text"
-                placeholder="Username"
-              />
-              <input
-                className="block outline-none border-b-2 border-b-[#ece0f7] w-full mb-10 bg-inherit"
-                type="text"
-                placeholder="Email"
-              />
-              <input
-                className="block outline-none border-b-2 border-b-[#ece0f7] w-full mb-10 bg-inherit"
-                type="text"
-                placeholder="Password"
-              />
+              <div className=" border-b-2 border-b-[#ece0f7] w-full mb-5 bg-inherit py-2">
+                <input
+                  className="block outline-none"
+                  type="text"
+                  placeholder="Username"
+                />
+              </div>
+              <div className=" border-b-2 border-b-[#ece0f7] w-full mb-5 bg-inherit py-2">
+                <input
+                  className="block outline-none"
+                  type="email"
+                  placeholder="Email"
+                />
+              </div>
+              <div 
+              className=" border-b-2 border-b-[#ece0f7] w-full mb-10 bg-inherit py-2 flex justify-between">
+                <input
+                  className="block outline-none w-full"
+                  type={showPassword ? 'text' : 'password'}
+                  placeholder="Password"
+                />
+                <div onClick={() => {setShowPassword(!showPassword)}}>
+                  {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon/>}
+                </div>
+              </div>
               <button className="w-full bg-[#734F96] rounded-3xl text-white font-semibold py-2">
-                Let's do this
+                Let's do this 💪🏽
               </button>
             </form>
             <button className="text-center w-full">
