@@ -26,14 +26,14 @@ const signup = () => {
             <form className="flex flex-col justify-between mb-3" action="">
               <div className=" border-b-2 border-b-[#ece0f7] w-full mb-5 bg-inherit py-2">
                 <input
-                  className="block outline-none"
+                  className="block outline-none w-full"
                   type="text"
                   placeholder="Username"
                 />
               </div>
               <div className=" border-b-2 border-b-[#ece0f7] w-full mb-5 bg-inherit py-2">
                 <input
-                  className="block outline-none"
+                  className="block outline-none w-full"
                   type="email"
                   placeholder="Email"
                 />
